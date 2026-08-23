@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Indus Hall | Contact Us</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- AOS CSS -->
+    <link
+        href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <h1>INDUS HALL</h1>
+
+        <p>Restaurant & Banquet</p>
+
+    </header>
+
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="menu.html">Menu</a>
+
+        <a href="halls.html">Banquet Halls</a>
+
+        <a href="contact.html">Contact Us</a>
+
+    </nav>
+
+
+
+    <!-- ================= PAGE BANNER ================= -->
+
+    <section class="page-banner">
+
+        <h2>Contact Us</h2>
+
+        <p>We would love to hear from you</p>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT SECTION ================= -->
+
+    <section class="contact">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <h2>Get In Touch</h2>
+
+            <p>📍 Malir Cantt, Karachi, Pakistan</p>
+
+            <p>📞 +92 3324822623</p>
+
+            <p>✉️ info@indushall.com</p>
+
+            <p>🕐 Open Daily: 11:00 AM - 12:00 PM</p>
+
+        </div>
+
+
+
+        <!-- ================= CONTACT FORM ================= -->
+
+<form
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    action="/thank-you.html"
+>
+
+    <!-- Netlify Form Name -->
+
+    <input
+        type="hidden"
+        name="form-name"
+        value="contact"
+    >
+
+
+    <!-- Anti-Spam -->
+
+    <p hidden>
+
+        <label>
+            Don't fill this out if you're human:
+
+            <input name="bot-field">
+
+        </label>
+
+    </p>
+
+
+    <!-- Name -->
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+    >
+
+
+    <!-- Email -->
+
+    <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+    >
+
+
+    <!-- Phone -->
+
+    <input
+        type="tel"
+        name="phone"
+        placeholder="Phone Number"
+        required
+    >
+
+
+    <!-- Message -->
+
+    <textarea
+        name="message"
+        rows="6"
+        placeholder="Your Message"
+        required
+    ></textarea>
+
+
+    <!-- Submit -->
+
+    <button type="submit">
+        Send Message
+    </button>
+
+</form>
+```
+
+
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Indus Hall. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= AOS JS ================= -->
+
+    <script
+        src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // AOS Animation
+
+        AOS.init({
+
+            duration: 1000,
+
+            once: true,
+
+            offset: 100
+
+        });
+
+
+
+        // ================= SIDEBAR =================
+
+        function openSidebar() {
+
+            document
+                .getElementById("sidebar")
+                .classList.add("active");
+
+            document
+                .getElementById("overlay")
+                .classList.add("active");
+
+        }
+
+
+
+        // ================= CLOSE SIDEBAR =================
+
+        function closeSidebar() {
+
+            document
+                .getElementById("sidebar")
+                .classList.remove("active");
+
+            document
+                .getElementById("overlay")
+                .classList.remove("active");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
