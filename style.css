@@ -1,4 +1,5 @@
 
+
 /* =========================================
    GLOBAL
 ========================================= */
@@ -908,6 +909,220 @@ footer {
         height: 300px;
     }
 
+}
+/* =========================
+   DESKTOP NAVBAR
+========================= */
+
+.desktop-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-btn {
+    display: none;
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #111;
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    z-index: 1001;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+
+    position: fixed;
+
+    top: 0;
+    right: -280px;
+
+    width: 280px;
+    height: 100vh;
+
+    background: #111;
+
+    z-index: 1002;
+
+    transition: 0.4s ease;
+
+    box-shadow: -5px 0 20px rgba(0,0,0,0.4);
+}
+
+
+/* Sidebar open */
+
+.sidebar.active {
+    right: 0;
+}
+
+
+/* =========================
+   SIDEBAR HEADER
+========================= */
+
+.sidebar-header {
+
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    border-bottom: 1px solid #333;
+}
+
+
+.sidebar-header h2 {
+
+    color: white;
+
+    font-size: 20px;
+
+    margin: 0;
+
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-btn {
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 35px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   SIDEBAR LINKS
+========================= */
+
+.sidebar-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 25px 15px;
+
+}
+
+
+.sidebar-links a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    padding: 18px 15px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+
+}
+
+
+.sidebar-links a:hover {
+
+    background: #333;
+
+    padding-left: 25px;
+
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.6);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 1000;
+
+    transition: 0.3s;
+
+}
+
+
+.overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .desktop-nav {
+
+        display: none;
+
+    }
+
+    .menu-btn {
+
+        display: block;
+
+    }
+
+}
 
 }
 
