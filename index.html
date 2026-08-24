@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="style.css">
 
 
-    <!-- AOS CSS -->
+    <!-- ================= AOS CSS ================= -->
 
     <link
         href="https://unpkg.com/aos@2.3.1/dist/aos.css"
@@ -38,63 +38,89 @@
 
 
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- ================= DESKTOP NAVBAR ================= -->
 
-   <!-- ================= DESKTOP NAVBAR ================= -->
+    <nav class="desktop-nav">
 
-<nav class="desktop-nav">
+        <a href="index.html">Home</a>
 
-    <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
 
-    <a href="menu.html">Menu</a>
+        <a href="halls.html">Banquet Halls</a>
 
-    <a href="halls.html">Banquet Halls</a>
+        <a href="contact.html">Contact Us</a>
 
-    <a href="contact.html">Contact Us</a>
-
-</nav>
+    </nav>
 
 
-<!-- ================= MOBILE MENU BUTTON ================= -->
 
-<button class="menu-btn" id="menuBtn">
-    ☰
-</button>
+    <!-- ================= MOBILE MENU BUTTON ================= -->
+
+    <button class="menu-btn" id="menuBtn">
+
+        ☰
+
+    </button>
 
 
-<!-- ================= MOBILE SIDEBAR ================= -->
 
-<div class="sidebar" id="sidebar">
+    <!-- ================= MOBILE SIDEBAR ================= -->
 
-    <div class="sidebar-header">
+    <div class="sidebar" id="sidebar">
 
-        <h2>INDUS HALL</h2>
 
-        <button class="close-btn" id="closeBtn">
-            ×
-        </button>
+        <!-- SIDEBAR HEADER -->
+
+        <div class="sidebar-header">
+
+            <h2>INDUS HALL</h2>
+
+            <button
+                class="close-btn"
+                id="closeBtn">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+
+        <!-- SIDEBAR LINKS -->
+
+        <div class="sidebar-links">
+
+            <a href="index.html">
+                🏠 Home
+            </a>
+
+            <a href="menu.html">
+                🍽️ Menu
+            </a>
+
+            <a href="halls.html">
+                🏛️ Banquet Halls
+            </a>
+
+            <a href="contact.html">
+                📞 Contact Us
+            </a>
+
+        </div>
+
 
     </div>
 
 
-    <div class="sidebar-links">
 
-        <a href="index.html">🏠 Home</a>
+    <!-- ================= SIDEBAR OVERLAY ================= -->
 
-        <a href="menu.html">🍽️ Menu</a>
-
-        <a href="halls.html">🏛️ Banquet Halls</a>
-
-        <a href="contact.html">📞 Contact Us</a>
-
+    <div
+        class="overlay"
+        id="overlay">
     </div>
 
-</div>
-
-
-<!-- Dark background -->
-
-<div class="overlay" id="overlay"></div>
 
 
     <!-- ================= HERO ================= -->
@@ -103,20 +129,32 @@
 
         <div class="hero-content">
 
+
             <h2 data-aos="fade-up">
+
                 Welcome to Indus Hall
+
             </h2>
 
+
             <p>
+
                 Where Great Food Meets Beautiful Celebrations
+
             </p>
+
 
 
             <!-- EXPLORE MORE -->
 
-            <a href="#gallery" class="explore-btn">
+            <a
+                href="#gallery"
+                class="explore-btn">
+
                 Explore More
+
             </a>
+
 
         </div>
 
@@ -128,7 +166,13 @@
 
     <section class="about">
 
-        <h2>Welcome to Indus Hall</h2>
+
+        <h2>
+
+            Welcome to Indus Hall
+
+        </h2>
+
 
         <p>
 
@@ -139,24 +183,42 @@
 
         </p>
 
+
     </section>
 
 
 
     <!-- ================= OUR GALLERY ================= -->
 
-    <section id="gallery" class="gallery">
+    <section
+        id="gallery"
+        class="gallery">
+
+
+        <!-- GALLERY TITLE -->
 
         <div class="gallery-title">
 
-            <h2>Our Gallery</h2>
+
+            <h2>
+
+                Our Gallery
+
+            </h2>
+
 
             <p>
+
                 Beautiful moments at Indus Hall
+
             </p>
+
 
         </div>
 
+
+
+        <!-- GALLERY GRID -->
 
         <div class="gallery-grid">
 
@@ -172,6 +234,7 @@
             </div>
 
 
+
             <!-- IMAGE 2 -->
 
             <div class="gallery-item">
@@ -181,6 +244,7 @@
                     alt="Banquet Hall">
 
             </div>
+
 
 
             <!-- IMAGE 3 -->
@@ -194,6 +258,7 @@
             </div>
 
 
+
             <!-- IMAGE 4 -->
 
             <div class="gallery-item">
@@ -205,6 +270,7 @@
             </div>
 
 
+
             <!-- IMAGE 5 -->
 
             <div class="gallery-item">
@@ -214,6 +280,7 @@
                     alt="Restaurant Food">
 
             </div>
+
 
 
             <!-- IMAGE 6 -->
@@ -237,13 +304,20 @@
 
     <footer>
 
+
         <p>
+
             © 2026 Indus Hall. All Rights Reserved.
+
         </p>
 
+
         <h2>
+
             Made By Seyed Manan Shah
+
         </h2>
+
 
     </footer>
 
@@ -256,10 +330,14 @@
     </script>
 
 
+
+    <!-- ================= MAIN JAVASCRIPT ================= -->
+
     <script>
 
+
         /* =========================
-           AOS
+           AOS ANIMATION
         ========================= */
 
         AOS.init({
@@ -277,9 +355,13 @@
            SMOOTH SCROLL
         ========================= */
 
-        document
-            .querySelector(".explore-btn")
-            .addEventListener("click", function(event) {
+        const exploreBtn =
+            document.querySelector(".explore-btn");
+
+
+        exploreBtn.addEventListener(
+            "click",
+            function(event) {
 
                 event.preventDefault();
 
@@ -296,72 +378,130 @@
 
                 });
 
+            }
+        );
+
+
+
+        /* =========================
+           MOBILE SIDEBAR
+        ========================= */
+
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+
+        const closeBtn =
+            document.getElementById("closeBtn");
+
+
+        const sidebar =
+            document.getElementById("sidebar");
+
+
+        const overlay =
+            document.getElementById("overlay");
+
+
+
+        /* =========================
+           OPEN SIDEBAR
+        ========================= */
+
+        menuBtn.addEventListener(
+            "click",
+            function() {
+
+                sidebar.classList.add("active");
+
+                overlay.classList.add("active");
+
+            }
+        );
+
+
+
+        /* =========================
+           CLOSE SIDEBAR
+        ========================= */
+
+        closeBtn.addEventListener(
+            "click",
+            function() {
+
+                sidebar.classList.remove("active");
+
+                overlay.classList.remove("active");
+
+            }
+        );
+
+
+
+        /* =========================
+           CLOSE BY CLICKING OVERLAY
+        ========================= */
+
+        overlay.addEventListener(
+            "click",
+            function() {
+
+                sidebar.classList.remove("active");
+
+                overlay.classList.remove("active");
+
+            }
+        );
+
+
+
+        /* =========================
+           CLOSE AFTER CLICKING LINK
+        ========================= */
+
+        document
+            .querySelectorAll(".sidebar-links a")
+            .forEach(function(link) {
+
+                link.addEventListener(
+                    "click",
+                    function() {
+
+                        sidebar.classList.remove("active");
+
+                        overlay.classList.remove("active");
+
+                    }
+                );
+
             });
 
+
+
+        /* =========================
+           ESC KEY CLOSE
+        ========================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    sidebar.classList.remove("active");
+
+                    overlay.classList.remove("active");
+
+                }
+
+            }
+        );
+
+
     </script>
-    <script>
-
-    /* =========================
-       MOBILE SIDEBAR
-    ========================= */
-
-    const menuBtn = document.getElementById("menuBtn");
-    const closeBtn = document.getElementById("closeBtn");
-    const sidebar = document.getElementById("sidebar");
-    const overlay = document.getElementById("overlay");
-
-
-    // Open sidebar
-
-    menuBtn.addEventListener("click", function() {
-
-        sidebar.classList.add("active");
-
-        overlay.classList.add("active");
-
-    });
-
-
-    // Close sidebar
-
-    closeBtn.addEventListener("click", function() {
-
-        sidebar.classList.remove("active");
-
-        overlay.classList.remove("active");
-
-    });
-
-
-    // Close when clicking outside
-
-    overlay.addEventListener("click", function() {
-
-        sidebar.classList.remove("active");
-
-        overlay.classList.remove("active");
-
-    });
-
-
-    // Close sidebar after clicking a link
-
-    document.querySelectorAll(".sidebar-links a").forEach(function(link) {
-
-        link.addEventListener("click", function() {
-
-            sidebar.classList.remove("active");
-
-            overlay.classList.remove("active");
-
-        });
-
-    });
-
-</script>
 
 
 </body>
 
 </html>
-
