@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,18 +40,61 @@
 
     <!-- ================= NAVBAR ================= -->
 
-    <nav>
+   <!-- ================= DESKTOP NAVBAR ================= -->
 
-        <a href="index.html">Home</a>
+<nav class="desktop-nav">
 
-        <a href="menu.html">Menu</a>
+    <a href="index.html">Home</a>
 
-        <a href="halls.html">Banquet Halls</a>
+    <a href="menu.html">Menu</a>
 
-        <a href="contact.html">Contact Us</a>
+    <a href="halls.html">Banquet Halls</a>
 
-    </nav>
+    <a href="contact.html">Contact Us</a>
 
+</nav>
+
+
+<!-- ================= MOBILE MENU BUTTON ================= -->
+
+<button class="menu-btn" id="menuBtn">
+    ☰
+</button>
+
+
+<!-- ================= MOBILE SIDEBAR ================= -->
+
+<div class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+
+        <h2>INDUS HALL</h2>
+
+        <button class="close-btn" id="closeBtn">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="sidebar-links">
+
+        <a href="index.html">🏠 Home</a>
+
+        <a href="menu.html">🍽️ Menu</a>
+
+        <a href="halls.html">🏛️ Banquet Halls</a>
+
+        <a href="contact.html">📞 Contact Us</a>
+
+    </div>
+
+</div>
+
+
+<!-- Dark background -->
+
+<div class="overlay" id="overlay"></div>
 
 
     <!-- ================= HERO ================= -->
@@ -255,9 +299,69 @@
             });
 
     </script>
+    <script>
+
+    /* =========================
+       MOBILE SIDEBAR
+    ========================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+
+    // Open sidebar
+
+    menuBtn.addEventListener("click", function() {
+
+        sidebar.classList.add("active");
+
+        overlay.classList.add("active");
+
+    });
+
+
+    // Close sidebar
+
+    closeBtn.addEventListener("click", function() {
+
+        sidebar.classList.remove("active");
+
+        overlay.classList.remove("active");
+
+    });
+
+
+    // Close when clicking outside
+
+    overlay.addEventListener("click", function() {
+
+        sidebar.classList.remove("active");
+
+        overlay.classList.remove("active");
+
+    });
+
+
+    // Close sidebar after clicking a link
+
+    document.querySelectorAll(".sidebar-links a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            sidebar.classList.remove("active");
+
+            overlay.classList.remove("active");
+
+        });
+
+    });
+
+</script>
 
 
 </body>
 
 </html>
-```
+
