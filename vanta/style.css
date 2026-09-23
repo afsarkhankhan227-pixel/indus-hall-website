@@ -1,0 +1,1237 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #090806;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --gold: #d4af37;
+    --gold-light: #f0d477;
+    --black: #090806;
+    --dark: #11100d;
+    --muted: #858078;
+}
+
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+.loader {
+    position: fixed;
+    inset: 0;
+    background: #090806;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+
+    animation: loaderOut 1s ease 2.2s forwards;
+}
+
+.loader-logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 60px;
+    letter-spacing: 15px;
+}
+
+.loader-line {
+    width: 120px;
+    height: 1px;
+    background: var(--gold);
+    margin-top: 20px;
+
+    animation: loadingLine 1.5s ease;
+}
+
+@keyframes loadingLine {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 120px;
+    }
+}
+
+@keyframes loaderOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 90px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    background:
+        linear-gradient(
+            rgba(9, 8, 6, .9),
+            rgba(9, 8, 6, .15)
+        );
+
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    letter-spacing: 5px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    color: #bdb8ae;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.nav-button {
+    padding: 13px 22px;
+
+    border: 1px solid var(--gold);
+    color: var(--gold);
+
+    text-decoration: none;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    transition: .3s;
+}
+
+.nav-button:hover {
+    background: var(--gold);
+    color: #090806;
+}
+
+
+/* =====================================================
+   MENU BUTTON
+===================================================== */
+
+.menu-btn {
+    display: none;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+
+    width: 28px;
+    height: 1px;
+
+    background: white;
+
+    margin: 6px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 7%;
+
+    overflow: hidden;
+}
+
+#three-container {
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+}
+
+#three-container canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #090806 0%,
+            rgba(9, 8, 6, .85) 35%,
+            rgba(9, 8, 6, .2) 100%
+        );
+
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 750px;
+}
+
+.hero-small {
+    color: var(--gold);
+
+    font-size: 11px;
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(65px, 8vw, 125px);
+
+    line-height: .82;
+    font-weight: 500;
+
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.hero p {
+    max-width: 540px;
+
+    color: #a09b91;
+
+    line-height: 1.8;
+    font-size: 14px;
+
+    margin-top: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 40px;
+}
+
+.gold-button,
+.outline-button {
+    display: inline-block;
+
+    padding: 16px 27px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    transition: .4s;
+}
+
+.gold-button {
+    background: var(--gold);
+
+    color: #090806;
+
+    border: 1px solid var(--gold);
+}
+
+.gold-button:hover {
+    background: transparent;
+
+    color: var(--gold);
+
+    transform: translateY(-4px);
+}
+
+.outline-button {
+    color: white;
+
+    border: 1px solid #4a4741;
+}
+
+.outline-button:hover {
+    border-color: var(--gold);
+
+    color: var(--gold);
+}
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 35px;
+    left: 7%;
+
+    z-index: 5;
+
+    color: #706b63;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.scroll-indicator span {
+    width: 35px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about {
+    padding: 140px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+
+    background: var(--dark);
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    height: 600px;
+
+    object-fit: cover;
+
+    filter: brightness(.75);
+}
+
+.image-frame {
+    position: absolute;
+
+    width: 90%;
+    height: 90%;
+
+    border: 1px solid var(--gold);
+
+    top: 5%;
+    left: 5%;
+
+    pointer-events: none;
+}
+
+.section-label {
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+.about h2,
+.section-heading h2,
+.contact h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 5vw, 80px);
+
+    line-height: .9;
+
+    font-weight: 500;
+
+    margin-top: 20px;
+}
+
+.about h2 span,
+.section-heading h2 span,
+.contact h2 span {
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+.about-content > p {
+    color: var(--muted);
+
+    line-height: 1.9;
+
+    font-size: 14px;
+
+    max-width: 520px;
+
+    margin-top: 30px;
+}
+
+.features {
+    display: flex;
+
+    gap: 30px;
+
+    margin-top: 45px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #2a2824;
+}
+
+.features div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.features strong {
+    color: var(--gold);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+}
+
+.features span {
+    color: #888;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+.text-button {
+    display: inline-block;
+
+    margin-top: 40px;
+
+    color: var(--gold);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   HALLS
+===================================================== */
+
+.halls {
+    padding: 140px 7%;
+}
+
+.section-heading {
+    max-width: 650px;
+
+    margin-bottom: 70px;
+}
+
+.section-heading p {
+    color: #777;
+
+    margin-top: 25px;
+
+    line-height: 1.7;
+}
+
+.hall-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.hall-card {
+    background: #11100d;
+
+    border: 1px solid #25231f;
+
+    transition: .5s;
+
+    overflow: hidden;
+}
+
+.hall-card:hover {
+    transform: translateY(-10px);
+
+    border-color: var(--gold);
+}
+
+.hall-image {
+    height: 390px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hall-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .8s;
+}
+
+.hall-card:hover .hall-image img {
+    transform: scale(1.08);
+}
+
+.hall-number {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    color: var(--gold);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+}
+
+.hall-info {
+    padding: 30px;
+}
+
+.hall-info h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    font-weight: 500;
+}
+
+.hall-info p {
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    margin: 12px 0 25px;
+}
+
+.hall-info span {
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats-section {
+    padding: 70px 7%;
+
+    background: #11100d;
+
+    border-top: 1px solid #22201c;
+    border-bottom: 1px solid #22201c;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    text-align: center;
+}
+
+.stat-box {
+    border-right: 1px solid #292621;
+}
+
+.stat-box:last-child {
+    border: none;
+}
+
+.stat-box strong {
+    display: block;
+
+    color: var(--gold);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 55px;
+
+    font-weight: 500;
+}
+
+.stat-box span {
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery {
+    padding: 140px 7%;
+
+    background: var(--dark);
+}
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    grid-auto-rows: 270px;
+
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+}
+
+.gallery-item.large {
+    grid-row: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .7s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta {
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 7%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #272116,
+            #090806 65%
+        );
+}
+
+.cta-content {
+    max-width: 900px;
+}
+
+.cta h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 8vw, 110px);
+
+    line-height: .85;
+
+    font-weight: 500;
+
+    margin: 25px 0 45px;
+}
+
+.cta h2 span {
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+    padding: 140px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+.contact-info > p {
+    color: #777;
+
+    max-width: 500px;
+
+    line-height: 1.8;
+
+    margin-top: 30px;
+}
+
+.contact-details {
+    margin-top: 50px;
+}
+
+.contact-details div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #27251f;
+}
+
+.contact-details span {
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.contact-details strong {
+    color: #ddd;
+
+    font-size: 13px;
+
+    font-weight: 400;
+}
+
+.contact-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+
+    background: #11100d;
+
+    border: 1px solid #292722;
+
+    padding: 17px;
+
+    color: white;
+
+    font-family: inherit;
+
+    outline: none;
+
+    transition: .3s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--gold);
+}
+
+.contact-form select {
+    color: #888;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 40px 7%;
+
+    border-top: 1px solid #24221e;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: #666;
+
+    font-size: 10px;
+}
+
+.footer-logo {
+    font-family: "Cormorant Garamond", serif;
+
+    color: white;
+
+    font-size: 22px;
+
+    letter-spacing: 4px;
+}
+
+.footer-logo span {
+    color: var(--gold);
+
+    font-size: 9px;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #666;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        height: 75px;
+
+        padding: 0 6%;
+    }
+
+    nav,
+    .nav-button {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .mobile-menu {
+        position: fixed;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        background: #0d0c09;
+
+        z-index: 999;
+
+        display: flex;
+
+        flex-direction: column;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition: .5s;
+    }
+
+    .mobile-menu.active {
+        max-height: 500px;
+
+        padding: 20px 7%;
+    }
+
+    .mobile-menu a {
+        color: white;
+
+        text-decoration: none;
+
+        padding: 18px 0;
+
+        border-bottom: 1px solid #27251f;
+
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 900px;
+
+        align-items: flex-start;
+
+        padding-top: 180px;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                #090806 10%,
+                rgba(9, 8, 6, .5),
+                #090806
+            );
+    }
+
+    .hero h1 {
+        font-size: 68px;
+    }
+
+    #three-container {
+        opacity: .6;
+
+        top: 300px;
+    }
+
+    .about,
+    .contact {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .about-image img {
+        height: 450px;
+    }
+
+    .hall-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 40px;
+    }
+
+    .stat-box {
+        border: none;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+
+        grid-auto-rows: 220px;
+    }
+
+    .gallery-item.large {
+        grid-row: span 1;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 56px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .about,
+    .halls,
+    .gallery,
+    .contact {
+        padding: 90px 6%;
+    }
+
+    .features {
+        gap: 15px;
+    }
+
+    .features span {
+        font-size: 9px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 260px;
+    }
+
+    .stats-section {
+        padding: 50px 6%;
+    }
+
+}
+
+
+/* =====================================================
+   WHATSAPP FLOATING BUTTON
+===================================================== */
+
+.whatsapp-btn {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 18px;
+
+    background: #25D366;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 50px;
+
+    font-family: "Inter", sans-serif;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, .35);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+
+    animation: whatsappPulse 2.5s infinite;
+}
+
+
+/* WHATSAPP ICON */
+
+.wa-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, .15);
+
+    border-radius: 50%;
+
+    font-size: 20px;
+
+    flex-shrink: 0;
+}
+
+
+/* WHATSAPP TEXT */
+
+.wa-text {
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.2;
+}
+
+.wa-text strong {
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.wa-text small {
+    color: rgba(255, 255, 255, .8);
+
+    font-size: 9px;
+
+    margin-top: 3px;
+}
+
+
+/* WHATSAPP HOVER */
+
+.whatsapp-btn:hover {
+    transform: translateY(-5px) scale(1.03);
+
+    background: #20bd5a;
+
+    box-shadow:
+        0 12px 35px rgba(37, 211, 102, .4);
+}
+
+
+/* WHATSAPP PULSE */
+
+@keyframes whatsappPulse {
+
+    0% {
+        box-shadow:
+            0 8px 30px rgba(37, 211, 102, .20);
+    }
+
+    50% {
+        box-shadow:
+            0 8px 35px rgba(37, 211, 102, .50);
+    }
+
+    100% {
+        box-shadow:
+            0 8px 30px rgba(37, 211, 102, .20);
+    }
+
+}
+
+
+/* =====================================================
+   WHATSAPP MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .whatsapp-btn {
+
+        width: 58px;
+        height: 58px;
+
+        right: 15px;
+        bottom: 15px;
+
+        padding: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+    }
+
+    .wa-icon {
+
+        width: 58px;
+        height: 58px;
+
+        background: transparent;
+
+        font-size: 25px;
+    }
+
+    .wa-text {
+        display: none;
+    }
+
+}
